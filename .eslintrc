@@ -1,0 +1,88 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "amd": true
+  },
+  "plugins": ["import", "flowtype", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "problems",
+    "plugin:prettier/recommended",
+    "prettier/flowtype",
+    "prettier/react"
+  ],
+  "rules": {
+    "strict": ["off"],
+    "max-len": ["off"],
+    "consistent-return": "warn",
+    "arrow-body-style": "warn",
+    "arrow-parens": "off",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "warn",
+    "no-underscore-dangle": ["off"],
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [
+          "render",
+          "getInitialState",
+          "getDefaultProps",
+          "componentWillMount",
+          "componentDidMount",
+          "componentWillReceiveProps",
+          "shouldComponentUpdate",
+          "componentWillUpdate",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ]
+      }
+    ],
+    "no-mixed-operators": "warn",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "import/no-extraneous-dependencies": "warn",
+    "react/no-deprecated": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": [2, {"forbid": ["any"]}],
+    "react/no-multi-comp": "off",
+    "react/jsx-uses-vars": 1,
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": false,
+        "jsxBracketSameLine": true,
+        "printWidth": 80
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  }
+}
